@@ -19,11 +19,11 @@ public class TreeJM{
       }
       public TNode(int e, TNode p){
          data = e;
-	      parent = p;
-	      children = new ArrayList<TNode>();
+	 parent = p;
+	 children = new ArrayList<TNode>();
       }
       public int getData(){
-	      return data;
+	 return data;
       }
       public TNode getParent(){
          return parent;
@@ -35,32 +35,32 @@ public class TreeJM{
    private TNode root;
    private int size;
    TreeJM(){
-      root = null;
-      size = 0;
+      	root = null;
+      	size = 0;
    }
    public TNode createNode(int e, TNode p){
-      return new TNode(e, p);
+      	return new TNode(e, p);
    }
    public TNode addChild(TNode n, int e){
-	   TNode temp = createNode(e, n);
-      n.children.add(temp);
-      size++;
-      return temp;
+	TNode temp = createNode(e, n);
+      	n.children.add(temp);
+      	size++;
+      	return temp;
    }
    public TNode addRoot(int e) throws IllegalArgumentException{
-      if (root != null) throw new IllegalArgumentException("Root is full");
-      root = createNode(e, null);
-      size++;
-      return root;
+      	if (root != null) throw new IllegalArgumentException("Root is full");
+      	root = createNode(e, null);
+      	size++;
+      	return root;
    }
 
    //Part A - #2a
    public void levelOrder(){
-      List<TNode> queue = new LinkedList<>();
-      //create queue, add root to queue
-      queue.add(root); //Add's root to the queue so when the List is called in the other method, it has a starting point
-      levelOrderPrint(queue);
-      System.out.println();
+      	List<TNode> queue = new LinkedList<>();
+      	//create queue, add root to queue
+      	queue.add(root); //Add's root to the queue so when the List is called in the other method, it has a starting point
+      	levelOrderPrint(queue);
+      	System.out.println();
    }
 
    //Part A - #2b
@@ -70,11 +70,11 @@ public class TreeJM{
          TNode child = l.get(0); //Gets the FIRST element in the queue
          for(TNode cn: child.getChildren()) { //Add's children at that "child" variable as TNode's and puts them into the queue
             l.add(cn);
-         }
+      }
          System.out.print(l.get(0).getData() + " ");
          l.remove(0); //Removes elements of queue.
          size--;
-      }
+   }
 
    }
 
